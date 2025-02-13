@@ -120,6 +120,106 @@
             color: var(--primary);
             transform: scale(1.05);
         }
+        /* تحسينات عامة للاستجابة */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .header-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .daily-card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .progress-bar {
+        height: 6px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        font-size: 13px;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .daily-card {
+        padding: 15px;
+    }
+
+    #preloader img {
+        width: 180px;
+    }
+
+    .notification {
+        font-size: 0.9rem;
+        padding: 10px;
+        right: 10px;
+    }
+}
+
+/* تحسينات خاصة بالهواتف الأفقية */
+@media (max-height: 500px) {
+    header {
+        padding: 1rem;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+/* منع التكبير على الهواتف */
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+    max-zoom: 1.0;
+    min-zoom: 1.0;
+    user-zoom: fixed;
+}
 
         footer {
             background: var(--primary);
