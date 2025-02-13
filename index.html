@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>نفحات رمضان 🌙 - تجربة ممتعة</title>
+    <style>
+        :root {
+            --primary: #1A5D1A;
+            --gold: #FFD700;
+            --bg: #f5f5f5;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Amiri', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            transition: 0.3s;
+        }
+
+        header {
+            background: linear-gradient(45deg, var(--primary), #0d4210);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: auto;
+        }
+
+        .header-content {
+            text-align: right;
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .daily-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .daily-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            width: 30%;
+            height: 100%;
+            background: var(--gold);
+            border-radius: 4px;
+            transition: 0.5s;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        button:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        #preloader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #preloader img {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <img src="loader.gif" alt="جار التحميل"
+            onerror="this.src='data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3DwWwuf2MTFYAEAJi6HvnYpsSOQZ1VgAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3DwWwuf2MTFYAEAJi6HvnYpsSOQZ1VgAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAA7';"
+            style="width: 200px;">
+    </div>
+
+    <header>
+        <img class="logo" src="منظور يتمنى لكم.gif" alt="شعار رمضان" onerror="this.style.display='none'">
+        <div class="header-content">
+            <div class="stars">⭐</div>
+            <h1>نفحات رمضان 🌙</h1>
+            <p>رحلة روحانية يومية تلامس القلب</p>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="daily-card">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <h2>📖 درس اليوم: شهر البركات </h2>
+            <p>التاريخ: <span id="hijri-date">1 رمضان 1445</span></p>
+            <button onclick="startDownload()" id="downloadBtn">
+                <span class="download-animation">⏳</span>
+                بدء التحميل
+            </button>
+            <div id="downloadProgress" style="display: none;">
+                <p>جاري التحضير: <span id="progressPercent">0%</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> نفحات رمضان 🌙 | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // إعدادات التحميل
+        const pdfPath = "ليالي رمضان.pdf"; // تأكد من وجود الملف في نفس المجلد
+        let isDownloading = false;
+
+        function startDownload() {
+            if (isDownloading) return;
+            isDownloading = true;
+
+            document.getElementById('downloadProgress').style.display = 'block';
+            const progressFill = document.querySelector('.progress-fill');
+            let percent = 0;
+
+            const interval = setInterval(() => {
+                percent += 10;
+                document.getElementById('progressPercent').textContent = percent + '%';
+                progressFill.style.width = percent + '%';
+
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    simulateDownload();
+                    isDownloading = false;
+                }
+            }, 300);
+        }
+
+        function simulateDownload() {
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = pdfPath.split('/').pop();
+            link.style.display = 'none';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showNotification('تم التحميل بنجاح! 📚');
+        }
+
+        function showNotification(text) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.background = 'white';
+            notification.style.padding = '15px';
+            notification.style.borderRadius = '10px';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            notification.textContent = text;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // إدارة Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hide');
+            }, 5000);
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+
+        // معالجة الأخطاء
+        window.addEventListener('error', (e) => {
+            console.error('حدث خطأ:', e.message);
+            showNotification('حدث خطأ أثناء التحميل! ⚠️');
+            document.getElementById('preloader').classList.add('hide');
+        });
+    </script>
+</body>
+
+</html>
