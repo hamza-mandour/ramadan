@@ -31,18 +31,24 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-direction: column; /* تغيير الاتجاه إلى عمودي */
-            text-align: center; /* توسيط النص */
+            flex-direction: column;
+            /* تغيير الاتجاه إلى عمودي */
+            text-align: center;
+            /* توسيط النص */
         }
 
         .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 150px;
             height: auto;
-            margin-bottom: 15px; /* إضافة مسافة أسفل الشعار */
         }
 
         .header-content {
-            text-align: center; /* توسيط النص */
+            text-align: center;
+            /* توسيط النص */
         }
 
         .stars {
@@ -156,14 +162,19 @@
         @media (max-width: 768px) {
             header {
                 padding: 1.5rem;
-                flex-direction: column; /* تغيير الاتجاه إلى عمودي */
-                text-align: center; /* توسيط النص */
+                flex-direction: column;
+                /* تغيير الاتجاه إلى عمودي */
+                text-align: center;
+                /* توسيط النص */
             }
 
             .logo {
-                position: static; /* إزالة التموضع المطلق */
-                transform: none; /* إزالة التحويل */
-                margin: 0 auto 15px; /* توسيط الشعار وإضافة مسافة أسفله */
+                position: static;
+                /* إزالة التموضع المطلق */
+                transform: none;
+                /* إزالة التحويل */
+                margin: 0 auto 15px;
+                /* توسيط الشعار وإضافة مسافة أسفله */
                 width: 120px;
             }
 
