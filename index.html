@@ -31,21 +31,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+            text-align: center; /* توسيط النص */
         }
 
         .logo {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
             width: 150px;
             height: auto;
+            margin-bottom: 15px; /* إضافة مسافة أسفل الشعار */
         }
 
         .header-content {
-            text-align: right;
-            flex-grow: 1;
-            padding-right: 20px;
+            text-align: center; /* توسيط النص */
         }
 
         .stars {
@@ -156,18 +153,17 @@
             object-fit: contain;
         }
 
-
-
-
         @media (max-width: 768px) {
             header {
                 padding: 1.5rem;
+                flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+                text-align: center; /* توسيط النص */
             }
 
             .logo {
-                position: static;
-                transform: none;
-                margin: 0 auto 15px;
+                position: static; /* إزالة التموضع المطلق */
+                transform: none; /* إزالة التحويل */
+                margin: 0 auto 15px; /* توسيط الشعار وإضافة مسافة أسفله */
                 width: 120px;
             }
 
@@ -177,7 +173,6 @@
 
             #preloader img {
                 width: 80vw !important;
-                /* حجم مناسب للجوال */
                 max-width: 300px;
             }
         }
@@ -197,7 +192,6 @@
 
             button {
                 width: 100%;
-                /* زر كامل العرض */
             }
         }
 
@@ -209,7 +203,6 @@
 
         .main-content {
             width: 95%;
-            /* مساحة جانبية على الشاشات الصغيرة */
             max-width: 1000px;
         }
 
@@ -259,7 +252,7 @@
 
     <script>
         // إعدادات التحميل
-        const pdfPath = "الليلة الاولى.pdf"; // تأكد من وجود الملف في نفس المجلد
+        const pdfPath = "ليالي رمضان.pdf"; // تأكد من وجود الملف في نفس المجلد
         let isDownloading = false;
 
         function startDownload() {
