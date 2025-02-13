@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>نفحات رمضان 🌙 - تجربة ممتعة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         :root {
             --primary: #1A5D1A;
@@ -120,106 +122,6 @@
             color: var(--primary);
             transform: scale(1.05);
         }
-        /* تحسينات عامة للاستجابة */
-@media (max-width: 1200px) {
-    .main-content {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 992px) {
-    header {
-        padding: 1.5rem;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logo {
-        position: static;
-        transform: none;
-        margin-bottom: 1rem;
-    }
-
-    .header-content {
-        padding-right: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    :root {
-        font-size: 14px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .daily-card {
-        padding: 20px;
-        margin: 15px 0;
-    }
-
-    button {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .progress-bar {
-        height: 6px;
-    }
-}
-
-@media (max-width: 576px) {
-    :root {
-        font-size: 13px;
-    }
-
-    header {
-        padding: 1rem;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .logo {
-        width: 120px;
-    }
-
-    .daily-card {
-        padding: 15px;
-    }
-
-    #preloader img {
-        width: 180px;
-    }
-
-    .notification {
-        font-size: 0.9rem;
-        padding: 10px;
-        right: 10px;
-    }
-}
-
-/* تحسينات خاصة بالهواتف الأفقية */
-@media (max-height: 500px) {
-    header {
-        padding: 1rem;
-    }
-
-    .main-content {
-        padding: 10px;
-    }
-}
-
-/* منع التكبير على الهواتف */
-@viewport {
-    width: device-width;
-    zoom: 1.0;
-    max-zoom: 1.0;
-    min-zoom: 1.0;
-    user-zoom: fixed;
-}
 
         footer {
             background: var(--primary);
@@ -231,14 +133,15 @@
 
         #preloader {
             position: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: white;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
             transition: opacity 1s ease;
+            overflow: hidden;
         }
 
         #preloader.hide {
@@ -247,7 +150,72 @@
         }
 
         #preloader img {
-            width: 250px;
+            width: 80vw;
+            max-width: 250px;
+            height: auto;
+            object-fit: contain;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem;
+            }
+
+            .logo {
+                position: static;
+                transform: none;
+                margin: 0 auto 15px;
+                width: 120px;
+            }
+
+            .header-content h1 {
+                font-size: 1.8rem;
+            }
+
+            #preloader img {
+                width: 80vw !important;
+                /* حجم مناسب للجوال */
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-content p {
+                font-size: 0.9rem;
+            }
+
+            .daily-card h2 {
+                font-size: 1.2rem;
+            }
+
+            button {
+                width: 100%;
+                /* زر كامل العرض */
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header-content h1 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .main-content {
+            width: 95%;
+            /* مساحة جانبية على الشاشات الصغيرة */
+            max-width: 1000px;
+        }
+
+        .daily-card {
+            margin: 15px 0;
+            padding: 20px;
         }
     </style>
 </head>
@@ -291,7 +259,7 @@
 
     <script>
         // إعدادات التحميل
-        const pdfPath = "الليلة الاولى.pdf"; // تأكد من وجود الملف في نفس المجلد
+        const pdfPath = "ليالي رمضان.pdf"; // تأكد من وجود الملف في نفس المجلد
         let isDownloading = false;
 
         function startDownload() {
